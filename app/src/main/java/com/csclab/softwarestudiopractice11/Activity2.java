@@ -52,13 +52,13 @@ public class Activity2 extends Activity{
         public boolean onTouch(View v, MotionEvent event) {
             switch(event.getAction()){
                 case MotionEvent.ACTION_DOWN: //ACTION_DOWN
-                    x = v.getX();
-                    y = v.getY();
+                    x = event.getX();
+                    y = event.getY();
                     break;
                 case MotionEvent.ACTION_MOVE: //ACTION_MOVE
                     mx = (int)(event.getRawX() - x);
                     my = (int)(event.getRawY() - 50 - y);
-                    v.layout(mx,my,mx+v.getMeasuredWidth(),my+v.getMeasuredHeight());
+                    v.layout(mx,my,mx+v.getWidth(),my+v.getHeight());
 
 
                     break;
